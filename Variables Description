@@ -1,0 +1,31 @@
+### 🔢 Biến rời rạc (Discrete Variables)
+
+1. **`grade`**: Xếp hạng khoản vay do LendingClub (LC) chỉ định.  
+2. **`sub_grade`**: Xếp hạng phụ chi tiết hơn do LC gán cho khoản vay.  
+3. **`home_ownership`**: Tình trạng sở hữu nhà ở do người vay khai báo khi đăng ký. Các giá trị có thể gồm: *RENT* (thuê), *OWN* (sở hữu), *MORTGAGE* (thế chấp), *OTHER* (khác).  
+4. **`addr_state`**: Bang nơi cư trú do người vay cung cấp trong đơn xin vay.  
+5. **`verification_status`**: Trạng thái xác minh thu nhập: không xác minh, đã xác minh một phần hoặc xác minh đầy đủ bởi LC.  
+6. **`purpose`**: Mục đích vay vốn do người vay lựa chọn (ví dụ: hợp nhất nợ, mua xe, v.v.).  
+7. **`initial_list_status`**: Trạng thái niêm yết ban đầu của khoản vay. Các giá trị có thể là: *W* (Whole loan), *F* (Fractional loan).  
+
+---
+
+### 📈 Biến liên tục (Continuous Variables)
+
+1. **`term`**: Số kỳ thanh toán của khoản vay (thường là 36 hoặc 60 tháng).  
+2. **`emp_length`**: Số năm làm việc của người vay (từ 0 đến 10, trong đó 0 nghĩa là dưới 1 năm và 10 là 10 năm trở lên).  
+3. **`int_rate`**: Lãi suất của khoản vay.  
+4. **`mths_since_earliest_cr_line`**: Số tháng kể từ khi người vay mở dòng tín dụng đầu tiên.  
+5. **`delinq_2yrs`**: Số lần trả chậm quá 30 ngày trong 2 năm gần nhất.  
+6. **`inq_last_6mths`**: Số lượng yêu cầu kiểm tra tín dụng trong 6 tháng qua (không bao gồm vay ô tô và vay thế chấp).  
+7. **`open_acc`**: Số lượng tài khoản tín dụng đang mở của người vay.  
+8. **`pub_rec`**: Số lượng bản ghi công khai tiêu cực (phá sản, kiện tụng, v.v.).  
+9. **`total_acc`**: Tổng số tài khoản tín dụng từng xuất hiện trong lịch sử tín dụng của người vay.  
+10. **`acc_now_delinq`**: Số tài khoản hiện đang trong tình trạng nợ xấu.  
+11. **`total_rev_hi_lim`**: Hạn mức tín dụng cao nhất cho các tài khoản tín dụng quay vòng.  
+12. **`annual_inc`**: Thu nhập hàng năm do người vay tự khai báo khi đăng ký.  
+13. **`dti`**: Tỷ lệ nợ trên thu nhập hàng tháng của người vay, không bao gồm khoản vay LC hiện tại.  
+14. **`mths_since_last_delinq`**: Số tháng kể từ lần vi phạm tín dụng gần nhất của người vay.  
+15. **`mths_since_last_record`**: Số tháng kể từ bản ghi công khai gần nhất.
+
+🔸 **Lưu ý:** Biến `mths_since_issue_d` (số tháng kể từ khi phát hành khoản vay gần nhất) không được sử dụng trong ví dụ này, nhưng nếu được thêm vào sẽ có thể cải thiện độ chính xác dự đoán.
