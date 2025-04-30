@@ -8,9 +8,7 @@ This project outlines the implementation of credit risk modelling components und
 
 **Expected Loss (EL)** represents the anticipated loss from credit risk over a given time horizon and is central to risk management and accounting standards. It is calculated using the formula:
 
-$$
-\text{EL} = \text{PD} \times \text{EAD} \times \text{LGD}
-$$
+**EL = PD × EAD × LGD**
 
 - **Basel Framework**: EL forms the foundation of the Internal Ratings-Based (IRB) approach used by banks to calculate regulatory capital. Accurate estimates of PD, LGD, and EAD are essential to ensure capital adequacy and risk sensitivity.
 
@@ -20,47 +18,45 @@ $$
 
 ## 🔄 Project Workflow Summary
 
-### 1. **Data Preprocessing**
+### 1. Data Preprocessing
 - Combined multiple datasets for PD, LGD, and EAD estimation.
 - Encoded categorical variables into dummy variables.
 - Removed reference categories to avoid multicollinearity.
 - Structured feature sets based on economic and credit characteristics.
-- Chunked processing and memory-efficient handling due to large dataset size.
+- Used chunked processing and memory-efficient handling for large dataset size.
 
-### 2. **LGD Modelling**
-- **Two-step regression** approach:
+### 2. LGD Modelling
+- **Two-step regression approach**:
   - Step 1: Predict recovery rate using model 1.
   - Step 2: Adjust recovery using model 2.
-- Final LGD computed as:
-  $$
-  \text{LGD} = 1 - (\text{Recovery}_{\text{step1}} \times \text{Recovery}_{\text{step2}})
-  $$
-- Clipped predicted recovery values to [0, 1] to ensure validity.
+- Final LGD computed as:  
+  **LGD = 1 - (Recovery_step1 × Recovery_step2)**
+- Predicted recovery values were clipped to [0, 1] for consistency.
 
-### 3. **PD Feature Processing**
-- Built a list of selected and reference features for dummy encoding.
+### 3. PD Feature Processing
+- Created feature sets from dummy variables (one-hot encoded).
 - Removed reference categories to ensure statistical stability.
-- Processed in chunks to avoid memory overflow.
-- Feature matrix constructed for downstream use in PD models.
+- Processed data in chunks to handle memory limitations.
+- Output matrix used in downstream PD estimation.
 
-### 4. **Expected Loss Estimation**
-- Final expected loss estimated with:
-  $$
-  \text{EL} = \text{PD} \times \text{EAD} \times \text{LGD}
-  $$
+### 4. Expected Loss Estimation
+- Final expected loss estimated with:  
+  **EL = PD × EAD × LGD**
 
 ---
 
 ## ⚠️ Note on PCA
-While PCA was considered to reduce dimensionality, it was skipped due to memory constraints and because dummy variables often do not benefit from PCA in a credit risk context.
+While PCA was initially considered for dimensionality reduction, it was skipped due to:
+- Memory limitations.
+- Limited benefit of PCA when working with high-dimensional dummy variables.
 
 ---
 
 ## 📌 Summary
-This project reflects a full pipeline for estimating expected loss under real-world banking standards. It emphasizes:
-- Clean preprocessing.
-- Modular modelling of LGD and PD.
-- Scalable design in line with IFRS 9 and Basel standards.
+This project implements a scalable, modular pipeline for credit risk quantification under IFRS 9 and Basel standards. It emphasizes:
 
-The methodology enables financial institutions to embed credit risk estimates into both regulatory reporting and internal risk management frameworks.
+- Clean and efficient preprocessing.
+- Structured modelling of LGD and PD.
+- Practical design choices suitable for real-world financial datasets.
 
+The result supports integration of Expected Loss into both regulatory capital calculation and financial reporting.
