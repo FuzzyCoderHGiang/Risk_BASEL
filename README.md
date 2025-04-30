@@ -25,7 +25,7 @@ This project outlines the implementation of credit risk modelling components und
 - Structured feature sets based on economic and credit characteristics.
 - Used chunked processing and memory-efficient handling for large dataset size.
 
-### 2. LGD Modelling
+### 2. LGD and EAD Modelling
 - **Two-step regression approach**:
   - Step 1: Predict recovery rate using model 1.
   - Step 2: Adjust recovery using model 2.
@@ -56,7 +56,7 @@ While PCA was initially considered for dimensionality reduction, it was skipped 
 This project implements a scalable, modular pipeline for credit risk quantification under IFRS 9 and Basel standards. It emphasizes:
 
 - Clean and efficient preprocessing.
-- Structured modelling of LGD and PD.
+- Structured modelling of EAD, LGD and PD.
 - Practical design choices suitable for real-world financial datasets.
 
 The result supports integration of Expected Loss into both regulatory capital calculation and financial reporting.
