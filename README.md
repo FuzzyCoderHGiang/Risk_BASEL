@@ -4,7 +4,7 @@ This project outlines the implementation of credit risk modelling components und
 
 ---
 
-## 📘 Background: Role of EL in Basel & IFRS 9
+##  Background: Role of EL in Basel & IFRS 9
 
 **Expected Loss (EL)** represents the anticipated loss from credit risk over a given time horizon and is central to risk management and accounting standards. It is calculated using the formula:
 
@@ -16,7 +16,7 @@ This project outlines the implementation of credit risk modelling components und
 
 ---
 
-## 🔄 Project Workflow Summary
+##  Project Workflow Summary
 
 ### 1. Data Preprocessing
 - Combined multiple datasets for PD, LGD, and EAD estimation.
@@ -45,14 +45,14 @@ This project outlines the implementation of credit risk modelling components und
 
 ---
 
-## ⚠️ Note on PCA
+## Note on PCA
 While PCA was initially considered for dimensionality reduction, it was skipped due to:
 - Memory limitations.
 - Limited benefit of PCA when working with high-dimensional dummy variables.
 
 ---
 
-## 📌 Summary
+## Summary
 This project implements a scalable, modular pipeline for credit risk quantification under IFRS 9 and Basel standards. It emphasizes:
 
 - Clean and efficient preprocessing.
